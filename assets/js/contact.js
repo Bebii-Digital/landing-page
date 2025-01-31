@@ -1,54 +1,42 @@
 /*
 *
-* Contact JS
+* Contact JS (WhatsApp Integration)
 */
 $(function() {
     // Get the form.
-    var form = $('#ajax_contact');
-
-    // Get the messages div.
-    var formMessages = $('#form-messages');
+    var form = $('#whatsapp-form');
 
     // Set up an event listener for the contact form.
-	$(form).submit(function(event) {
-		// Stop the browser from submitting the form.
-		event.preventDefault();
+    $(form).submit(function(event) {
+        // Stop the browser from submitting the form.
+        event.preventDefault();
 
-		// Serialize the form data.
-		var formData = $(form).serialize();
-		// Submit the form using AJAX.
-		$.ajax({
-			type: 'POST',
-			url: $(form).attr('action'),
-			data: formData
-		})
-		.done(function(response) {
-			// Make sure that the formMessages div has the 'success' class.
-			$(formMessages).removeClass('alert-danger');
-			$(formMessages).addClass('alert-success');
+        // Get form values.
+        var name = $('#fullname').val();
+        var email = $('#email').val();
+        var phone = $('#phone').val();
+        var website = $('#website').val();
+        var company = $('#company').val();
+        var message = $('#message').val();
 
-			// Set the message text.
-			$(formMessages).text(response);
+        // Format WhatsApp message.
+        var whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AWebsite: ${website}%0ACompany: ${company}%0AMessage: ${message}`;
 
-			// Clear the form.
-			$('#fullname').val('');
-			$('#email').val('');
-			$('#phone').val('');
-			$('#message').val('');
-		})
-		.fail(function(data) {
-			// Make sure that the formMessages div has the 'error' class.
-			$(formMessages).removeClass('alert-success');
-			$(formMessages).addClass('alert-danger');
+        // Replace with your WhatsApp number (without `+`, e.g., 6281234567890 for Indonesia).
+        var phoneNumber = "0895323144207";
 
-			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text('Oops! An error occured and your message could not be sent.');
-			}
-		});
+        // Construct WhatsApp URL.
+        var whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
-	});
+        // Open WhatsApp in a new tab.
+        window.open(whatsappURL, "_blank");
 
+        // Clear form fields.
+        $('#fullname').val('');
+        $('#email').val('');
+        $('#phone').val('');
+        $('#website').val('');
+        $('#company').val('');
+        $('#message').val('');
+    });
 });
