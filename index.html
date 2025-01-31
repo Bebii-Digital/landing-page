@@ -63,36 +63,12 @@
                             <div class="mobile-menu-items">
                                 <ul>
                                     <li class="">
-                                        <a href="#about-content">About Us</a>
+                                        <a class="scroll-btn" data-target="#about-content">About Us</a>
                                     </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="/">About</a></li>
-                                            <li><a href="/">Team</a></li>
-                                            <li><a href="/">Team Details</a></li>
-                                            <li><a href="/">Portfolio</a></li>
-                                            <li><a href="/">Portfolio Details</a></li>
-                                            <li><a href="/">Pricing Plans</a></li>
-                                            <li><a href="/">404 Error</a></li>
-                                        </ul>
+                                    <li class="">
+                                        <a class="scroll-btn" data-target="#service-content">Services</a>
                                     </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="/">Services</a>
-                                        <ul>
-                                            <li><a href="/">Service</a></li>
-                                            <li><a href="/">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="/">Blog</a>
-                                        <ul>
-                                            <li><a href="/">Blog Grid</a></li>
-                                            <li><a href="/">Blog list</a></li>
-                                            <li><a href="/">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/">Contact</a></li>
+                                    <li><a class="scroll-btn" data-target="#contact-content">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -191,9 +167,9 @@
         </div>
         <!-- ./ slider-section -->
         
-        <section class="about-section about-1 pt-140 pb-140 overflow-hidden">
+        <section id="about-content" class="about-section about-1 pt-140 pb-140 overflow-hidden">
             <div class="container">
-                <div id="about-content" class="row align-items-center">
+                <div class="row align-items-center">
                     <div class="col-lg-5 col-md-12">
                         <div class="about-img img-reveal">
                             <div class="img-overlay"></div>
@@ -218,7 +194,7 @@
         </section>
         <!-- ./ about-section -->
 
-        <section class="service-section overflow-hidden mb-2">
+        <section id="service-content" class="service-section overflow-hidden mb-2">
             <div class="service-wrap pt-140 pb-140">
                 <div class="container">
                     <div class="section-heading white-content">
@@ -333,7 +309,7 @@
         </section>
         <!-- ./ process-section -->
 
-        <section class="appointment-section pt-140 pb-140 overflow-hidden" data-background="assets/img/bg-img/appointment-bg.jpg">
+        <section id="contact-content" class="appointment-section pt-140 pb-140 overflow-hidden" data-background="assets/img/bg-img/appointment-bg.jpg">
             <div class="container" style="padding-bottom: 10px !important;">
                 <div class="row align-items-center fade-wrapper">
                     <div class="col-lg-6 col-md-12">
@@ -445,6 +421,7 @@
         <script src="assets/js/vendor/split-type.min.js"></script>
         <script src="assets/js/vendor/gsap.min.js"></script>
         <script src="assets/js/vendor/scroll-trigger.min.js"></script>
+        <script src="assets/js/vendor/scroll-to-plugin.min.js"></script>
         <script src="assets/js/vendor/scroll-smoother.js"></script>
         <script src="assets/js/vendor/jquery.carouselTicker.js"></script>
         <script src="assets/js/vendor/nice-select.js"></script>

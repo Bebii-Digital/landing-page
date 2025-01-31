@@ -2815,6 +2815,7 @@ START: Header CSS
   margin-right: 0;
 }
 .header .primary-header-inner .header-menu-wrap ul li a {
+  cursor: pointer;
   font-family: var(--rr-ff-heading);
   color: var(--rr-color-heading-primary);
   display: block;
